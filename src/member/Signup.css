@@ -1,0 +1,11 @@
+.signup_container {
+    margin: 124px auto;
+    width: 404px;
+    color: #333;
+}
+.signup_formwrapper h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 46px;
+    margin-bottom: 40px;
+}
