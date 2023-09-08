@@ -9,3 +9,162 @@
     line-height: 46px;
     margin-bottom: 40px;
 }
+
+.signup_form_columnOne {
+    margin: 19px 0;
+    text-align: left;
+}
+
+.signup_form_columnOne label {
+    display: block;
+}
+.signup_form_columnOne label span {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+.name_input_error {
+    border-color: red !important;
+}
+.name_input:focus{
+    border-color: greenyellow !important;
+}
+.signup_form_columnOne label input {
+    padding: 12px;
+    font-size: 16px;
+    height: 50px;
+    border: 1px solid #e0e4ed;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.signup_form_columnTwo {
+    margin: 19px 0;
+    text-align: left;
+}
+.signup_form_columnTwo label span {
+    display: inline-block;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.signup_form_columnTwo label {
+    display: block;
+
+}
+.signup_form_columnTwo label input {
+    padding: 12px;
+    font-size: 16px;
+    height: 50px;
+    border: 1px solid #e0e4ed;
+    border-radius: 4px;
+    width: 80%;
+}
+#emailBtn {
+    font-size: 16px;
+    width: 20% ;
+    font-weight: bold;
+}
+.signup_form_columnThree {
+    margin: 19px 0;
+    text-align: left;
+}
+.signup_form_columnThree label span {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+.signup_form_columnThree label {
+    display: block;
+}
+.signup_form_columnThree label em {
+    margin-bottom: 16px;
+    display: block;
+    font-size: 14px;
+}
+.signup_form_columnThree label input {
+    padding: 12px;
+    font-size: 16px;
+    height: 50px;
+    border: 1px solid #e0e4ed;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.signup_form_columnFour {
+    margin: 19px 0;
+    text-align: left;
+}
+.signup_form_columnFour label span {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+.signup_form_columnFour label {
+    display: block;
+}
+.signup_form_columnFour input {
+    padding: 12px;
+    font-size: 16px;
+    height: 50px;
+    border: 1px solid #e0e4ed;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.signup_formwrapper form button {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 6px;
+}
+
+.signup_formwrapper form button:disabled {
+    border-radius: 6px;
+    color: #fff;
+    background-color: #99e7c7;
+}
+.signup_form_signin {
+    text-align: center;
+}
+.signup_form_signin p {
+    font-size: 17px;
+    display: inline-block;
+    margin: 16px 0;
+}
+
+.signup_form_signin a {
+    margin-left: 8px;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+/*======================================================== 에러발생시 ======================================*/
+.error_tooltip_icon{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(https://cdn.jandi.com/landing/_next/static/media/check-red.c71391edcf1c8bb776cd9472f1cd7f1c.png) no-repeat 50%;
+}
+
+.error_tooltip_name{
+    position: relative;
+    margin: 8px 0;
+    width: 100%;
+}
+.error_tooltip_name div {
+    width: 100%;
+}
+.error_tooltip_name_menu {
+    width: 100%;
+    color: #ff5c48;
+}
+.error_tooltip_name_menu p {
+    font-size: 13px;
+    line-height: 20px;
+    display: inline-block;
+    margin-left: 20px;
+}
