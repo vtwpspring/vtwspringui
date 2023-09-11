@@ -25,9 +25,7 @@
 .name_input_error {
     border-color: red !important;
 }
-.name_input:focus{
-    border-color: greenyellow !important;
-}
+
 .signup_form_columnOne label input {
     padding: 12px;
     font-size: 16px;
@@ -58,6 +56,12 @@
     border: 1px solid #e0e4ed;
     border-radius: 4px;
     width: 80%;
+}
+.email_container {
+    display: flex;
+}
+.timer_container {
+    display: flex;
 }
 #emailBtn {
     font-size: 16px;
