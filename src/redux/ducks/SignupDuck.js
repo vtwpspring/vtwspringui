@@ -1,5 +1,6 @@
 
 // 액션 타입 정의
+const INPUT_NAME = 'signup/INPUT_NAME';
 const INPUT_EMAIL = 'signup/INPUT_EMAIL';
 const STATE_EMAIL_BTN = 'signup/STATE_EMAIL_BTN';
 const STATE_EMAIL = 'signup/STATE_EMAIL';
@@ -11,6 +12,11 @@ const STATE_PWD_CHK =  'signup/STATE_PWD_CHK';
 const STATE_NEXT_BTN =  'signup/STATE_NEXT_BTN';
 // 액션 생성자 함수
 // 액션 생성자 함수 정의
+export const updateName  = (value) => ({
+    type: INPUT_NAME,
+    payload: value,
+});
+
 export const updateInput  = (value) => ({
     type: INPUT_EMAIL,
     payload: value,
@@ -54,6 +60,7 @@ export const stateBtnNext = (value) => ({
 
 // 초기 상태
 const initialState = {
+    name : '',
     email: '',
     emailBtnState : true,
     emailState : true,
@@ -68,6 +75,8 @@ const initialState = {
 // 리듀서
 export default function singupReducer(state = initialState, action) {
     switch (action.type) {
+        case INPUT_NAME:
+            return { ...state, name: action.payload };
         case INPUT_EMAIL:
             return { ...state, email: action.payload };
         case STATE_EMAIL_BTN:

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Signup.css';
 import axios from 'axios';
 import {useDispatch, useSelector} from "react-redux";
+import Loading from "../common/Loading.js";
 import {
     pwdInput,
     stateBtnEmail, stateBtnNext,
@@ -10,9 +11,8 @@ import {
     stateEmail,
     statePwd,
     statePwdChk,
-    updateInput
+    updateInput, updateName
 } from '../redux/ducks/SignupDuck';
-
 
 function UserPwdChk(props) {
     const dispatch = useDispatch();
@@ -74,7 +74,7 @@ function UserPwd(props) {
         </div>
     );
 }
-
+/* 타이머 기능 제외
 function getSeconds(time) {
 
     //타이머 초부분 반환
@@ -119,7 +119,7 @@ function Timer(props) {
             <span>{getSeconds(time)}</span>
         </div>);
 }
-
+*/
 function ChkEmailCode(props) {
 
     const [code, setCode] = useState("");
@@ -177,7 +177,8 @@ function ChkEmailCode(props) {
 function UserEmail(props) {
 
     const dispatch = useDispatch();
-    
+    const [loading, setLoading] = useState(false);
+
     //이메일 정규표현식
     const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
@@ -213,17 +214,27 @@ function UserEmail(props) {
 
     const sendEmailCode = () => {
         dispatch(updateInput(email));
+        dispatch(stateBtnEmail(true));
+        // api 호출 전에 true로 변경하여 로딩화면 띄우기
+        setLoading(true);
+
+        //이메일 인증 코드 전송
         axios.get('/api/email/sendChkEmail',{params : {email : email}})
-            .then( response =>   setCodeDisplay(response.data))
+            .then( function (response){
+                setCodeDisplay(response.data);
+                dispatch(stateBtnEmail(false));
+                //완료시 로딩화면 제거
+                setLoading(false);
+            })
             .catch(error => alert("에러가 발생했습니다 잠시후에 시도해주세요."))
     }
 
     return (
         <div className="signup_form_columnTwo">
             <label>
+                {loading && <Loading/>}
                 <div className="email_container">
                     <span>이메일</span>
-                    {codeDisplay && <Timer></Timer>}
                 </div>
                 <input type="email"  disabled={emailDisabled} name = "email" placeholder="이메일 입력" autoComplete="off" onChange={validationEmail}/>
                 <button id = "emailBtn" type="button" disabled= {isDisabled} onClick={sendEmailCode}>인증하기</button>
@@ -262,6 +273,8 @@ function UserName(props) {
             dispatch(stateCode(false));
             dispatch(stateCodeBtn(false));
 
+            dispatch(updateName(inputName));
+
             // 2차 비밀번호 까지 입력후 이름 입력시 다음 버튼 다시 활성화
             if(!pwdChk){
                 dispatch(stateBtnNext(false));
@@ -297,13 +310,28 @@ function ErrorTooltip(props) {
 function Signup(props) {
 
     const nextBtnIsDisabled = useSelector((state) => state.signup.nextBtnState);
+    const email = useSelector((state) => state.signup.email);
+    const name = useSelector((state) => state.signup.name);
+    const pwd = useSelector((state) => state.signup.pwd);
+    const handleSubmit = e => {
+        e.preventDefault();
+        //회원가입
+        axios.post('/api/member/signUp',{
+                email : email,
+                name : name,
+                pwd : pwd})
+            .then( function (response){
+                console.log(response);
+            })
+            .catch(error => alert("에러가 발생했습니다 잠시후에 시도해주세요."))
+    }
 
     return (
         <main>
             <div className="signup_container">
                 <div className="signup_formwrapper">
                     <h1>회원가입</h1>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <fieldset>
                             <UserName></UserName>
                             <UserEmail></UserEmail>
