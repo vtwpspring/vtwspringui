@@ -1,0 +1,174 @@
+.signin_container {
+    margin: 124px auto;
+    width: 404px;
+    color: #333;
+}
+.signin_formwrapper h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 46px;
+    margin-bottom: 40px;
+}
+
+.signin_form_columnOne {
+    margin: 19px 0;
+    text-align: left;
+}
+
+.signin_form_columnOne label {
+    display: block;
+}
+.signin_form_columnOne label span {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+.name_input_error {
+    border-color: red !important;
+}
+
+.signin_form_columnOne label input {
+    padding: 12px;
+    font-size: 16px;
+    height: 50px;
+    border: 1px solid #e0e4ed;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.signin_form_columnTwo {
+    margin: 19px 0;
+    text-align: left;
+}
+.signin_form_columnTwo label span {
+    display: inline-block;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.signin_form_columnTwo label {
+    display: block;
+
+}
+.signin_form_columnTwo label input {
+    padding: 12px;
+    font-size: 16px;
+    height: 50px;
+    border: 1px solid #e0e4ed;
+    border-radius: 4px;
+    width: 100%;
+}
+.email_container {
+    display: flex;
+}
+.timer_container {
+    display: flex;
+}
+#emailBtn {
+    font-size: 16px;
+    width: 20% ;
+    font-weight: bold;
+}
+.signin_form_columnThree {
+    margin: 19px 0;
+    text-align: left;
+}
+.signin_form_columnThree label span {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+.signin_form_columnThree label {
+    display: block;
+}
+.signin_form_columnThree label em {
+    margin-bottom: 16px;
+    display: block;
+    font-size: 14px;
+}
+.signin_form_columnThree label input {
+    padding: 12px;
+    font-size: 16px;
+    height: 50px;
+    border: 1px solid #e0e4ed;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.signin_form_columnFour {
+    margin: 19px 0;
+    text-align: left;
+}
+.signin_form_columnFour label span {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+.signin_form_columnFour label {
+    display: block;
+}
+.signin_form_columnFour input {
+    padding: 12px;
+    font-size: 16px;
+    height: 50px;
+    border: 1px solid #e0e4ed;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.signin_formwrapper form button {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 6px;
+}
+
+.signin_formwrapper form button:disabled {
+    border-radius: 6px;
+    color: #fff;
+    background-color: #99e7c7;
+}
+.signin_form_signin {
+    text-align: center;
+}
+.signin_form_signin p {
+    font-size: 17px;
+    display: inline-block;
+    margin: 16px 0;
+}
+
+.signin_form_signin a {
+    margin-left: 8px;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+/*======================================================== 에러발생시 ======================================*/
+.error_tooltip_icon{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(https://cdn.jandi.com/landing/_next/static/media/check-red.c71391edcf1c8bb776cd9472f1cd7f1c.png) no-repeat 50%;
+}
+
+.error_tooltip_name{
+    position: relative;
+    margin: 8px 0;
+    width: 100%;
+}
+.error_tooltip_name div {
+    width: 100%;
+}
+.error_tooltip_name_menu {
+    width: 100%;
+    color: #ff5c48;
+}
+.error_tooltip_name_menu p {
+    font-size: 13px;
+    line-height: 20px;
+    display: inline-block;
+    margin-left: 20px;
+}
