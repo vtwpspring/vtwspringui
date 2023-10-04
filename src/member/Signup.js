@@ -341,7 +341,7 @@ function Signup(props) {
                         <button  type="submit" disabled = {nextBtnIsDisabled}>다음</button>
                         <div className="signup_form_signin">
                             <p>이미 가입하셨나요?</p>
-                            <a href="/landing/kr/signin">로그인</a>
+                            <a href="/signin">로그인</a>
                         </div>
                     </form>
                 </div>

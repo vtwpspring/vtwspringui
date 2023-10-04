@@ -3,8 +3,11 @@ import './MainIndex.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { openModal, closeModal } from '../redux/ducks/ModalDuck';
 import SignupModal from '../member/modal/SignupModal';
+import {useNavigate} from "react-router-dom";
 
 function LeftContainer() {
+
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const open = () => {
@@ -18,7 +21,9 @@ function LeftContainer() {
             <p>단절된 소통, 번거로운 자료 공유, 보안 위협은 이제 그만!</p>
             <p>협업툴 WEE!와 함께라면 효율적으로 협업할 수 있습니다.</p>
             <div className="Container_left_btn">
-                <button type="button">로그인</button>
+                <button type="button" onClick={() =>
+                    navigate("/signin")
+                }>로그인</button>
                 <button type="button" className="Signup_btn" onClick = {open}>회원가입</button>
             </div>
         </div>

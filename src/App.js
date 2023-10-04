@@ -6,6 +6,7 @@ import MainIndex from "./common/MainIndex";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import Signup from "./member/Signup";
+import SignIn from "./member/SignIn";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
               <Route path={"/"} element={<MainIndex />}></Route>
               <Route path={"/signup"} element={<Signup />}></Route>
+              <Route path={"/signin"} element={<SignIn />}></Route>
           </Routes>
           <Footer />
       </BrowserRouter>
